@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
 <title>webAppPython</title>
@@ -8,60 +10,15 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
-  <title>LINE LOGIN</title>
-  <style>
-    .centerScreen {
-      margin-top: 20;
-      margin-right: auto;
-      margin-bottom: 20;
-      margin-left: auto;
-    }
-  </style>
+  
 </head>
+<body>
+ <div class="login">
+	<br>
+	<h1>This is a simple web app using python flask by BH</h1>
+        <br> 
+ </div>
 
-<body style="background-color: powderblue;">
-  <div class="centerScreen">
-    <center>
-      <img src="https://drive.google.com/uc?id=1mEyShWSX9rPf4klIDeMTlHAOc4BsySFK" height="200px" , width="200px" />
-      <h1>
-        ต้อง login ก่อนไปสู่ google form
-      </h1>
-      <br>
-      <h2>
-       กำลังเข้าสู่ Line Login กรุณารอซักครู่...
-      </h2>
-    </center>
-  </div>
+
 </body>
-<footer>
-  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-  <script>
-    /// Config Your LIFF ID Here
-    const liffId = "1656300767-2jL14Gmm";
-    /// Config Your LIFF ID Here
-    liff.ready
-      .then(() => {
-        if (liff.isLoggedIn()) {
-          return liff.getProfile();
-        } else {
-          liff.login({
-            redirectUri: "https://script.google.com/macros/s/AKfycbwmX7CPjk3mRotbLV1LsJfyM2iHe2kYscxpnzoc7CdV8pLNQMXePlFn0q1zlZaaDeeUxg/exec",
-          });
-        }
-      })
-      .then((profile) => {
-        window.location.replace(
-          'https://docs.google.com/forms/d/e/1FAIpQLSdo4K-GJ0ZtJfu6O6NJi4tSdGpgxKSCf3MLxcbJKHoVuczYCA/viewform?usp=pp_url&entry.1897382142=${profile.userId}&entry.744189160=${profile.displayName}&entry.369678631=${profile.pictureUrl}&entry.1041970234=${profile.statusMessage}'
-        );
-      });
-    liff.init(
-      {
-        liffId: liffId,
-      },
-      () => {},
-      (err) => {
-        window.alert(err);
-      }
-    );
-  </script>
-</footer>
+</html>
