@@ -1,30 +1,15 @@
-from flask import Flask, request, abort, jsonify, render_template, url_for, redirect
+fromflaskimportFlask,render_template
 
-import json
-import requests
+app=Flask(__name__)
 
-#get other .py files
-# from getIP import * #from file getIP.py
+@app.route("/")#default page of web
 
-
-app = Flask(__name__)
-
-#run other .py files on this coding page
-# app.register_blueprint(getIP) #ให้ file getIP.py เชื่อมกับไฟล์นี้ ในตอนที่ runserver ได้
-
-
-#@app.route('/')
-#def hello():
- #   return "Hello Flask-Heroku Github Python"
-            
-@app.route('/')
-def main():
-    return render_template('index.html')
+defindex():
+    returnrender_template('index.html')
 
 @app.route("/about")
-def about():
-    return render_template('about.html')
+defabout():
+    returnrender_template('about.html')
 
-
-if __name__ == "__main__":
-    app.run(debug = True)
+if__name__=='__main__':
+    app.run()
